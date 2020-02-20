@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+<packages/>
+<device Dclock="26000000" Dcore="Cortex-M3" DcoreVersion="r2p1" Dendian="Little-endian" Dfamily="ADuCM355 Series" Dfpu="NO_FPU" Dmpu="NO_MPU" Dname="ADuCM355" Dtz="NO_TZ" Dvendor="Analog Devices:1" Pname="">
+<url>http://www.keil.com/dd2/analogdevices/aducm355</url>
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+</device>
+<toolchain Tcompiler="GCC" Toutput="exe"/>
+<components>
+<component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.3.0">
+<package name="CMSIS" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
+<file category="doc" name="CMSIS/Documentation/Core/html/index.html"/>
+<file category="include" name="CMSIS/Core/Include/"/>
+</component>
+<component Cclass="Device" Cgroup="AFE" Csub="Operation" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="include" deviceDependent="1" name="ADuCM355/common/ad5940lib/"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/ad5940lib/ad5940.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/ad5940lib/ad5940.c" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/ADuCM355Port.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="CLOCK" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/ClkLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/ClkLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="CRC" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/CrcLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/CrcLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="DMA" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/DmaLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/DmaLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="FLASH" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/FeeLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/FeeLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="GPIO" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/DioLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/DioLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="I2C" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/I2cLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/I2cLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="INT" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/IntLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/IntLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="PWR" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/PwrLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/PwrLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="RST" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/RstLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/RstLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="RTC" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/RtcLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/RtcLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="SPI" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/SpiLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/SpiLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="Timer" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/GptLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/GptLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="UART" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/UrtLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/UrtLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Peripheral Libraries" Csub="Watchdog" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="header" deviceDependent="1" name="ADuCM355/common/AfeWdtLib.h" version="0.9.4"/>
+<file category="source" deviceDependent="1" name="ADuCM355/common/AfeWdtLib.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Retarget UART" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="source" condition="ADuCM355_GCC" deviceDependent="1" name="ADuCM355/common/GCC/retarget.c" version="0.9.4"/>
+</component>
+<component Cclass="Device" Cgroup="Startup" Cvendor="Analog Devices" Cversion="0.9.4" deviceDependent="1">
+<package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="0.9.4"/>
+<file category="include" deviceDependent="1" name="ADuCM355/inc/"/>
+<file attr="config" category="source" condition="ADuCM355_GCC" deviceDependent="1" name="ADuCM355/common/GCC/startup_ADuCM355.c" version="0.9.4"/>
+<file attr="config" category="source" condition="ADuCM355_GCC" deviceDependent="1" name="ADuCM355/common/GCC/reset_ADuCM355.S" version="3.2.0"/>
+<file attr="config" category="source" condition="ADuCM355" deviceDependent="1" name="ADuCM355/common/system_ADuCM355.c" version="0.9.4"/>
+<file attr="config" category="header" condition="ADuCM355" deviceDependent="1" name="ADuCM355/inc/adi_config.h" version="0.9.4"/>
+<file attr="config" category="linkerScript" condition="ADuCM355_GCC" deviceDependent="1" name="ADuCM355/common/GCC/ADuCM355-Mode2.ld" version="0.9.4"/>
+<file attr="config" category="linkerScript" condition="ADuCM355_GCC" deviceDependent="1" name="ADuCM355/common/GCC/ADuCM355.ld" version="0.9.4"/>
+</component>
+</components>
+<apis/>
+</configuration>

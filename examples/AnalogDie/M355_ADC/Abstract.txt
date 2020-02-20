@@ -1,0 +1,1 @@
+Example demonstrating how to configure the ADC for Polling and FIFO mode

@@ -1,0 +1,1 @@
+Example demonstrating how to store info in the flash

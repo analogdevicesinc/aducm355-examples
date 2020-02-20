@@ -1,0 +1,1 @@
+Demonstrating how the Uart can wakeup the device

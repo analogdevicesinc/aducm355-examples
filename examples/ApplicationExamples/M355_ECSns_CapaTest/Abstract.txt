@@ -1,0 +1,1 @@
+Example application demonstrating how to do a chrono-amperometric measurement
