@@ -46,7 +46,10 @@ uint32_t AD5940_MCUResourceInit(void *pCfg)
 {
   /**
    * Note: In ADuCM355, the AFE/AD5940 INTC output is connected to EXTI3 of MCU.
-  */  
+  */
+  /* Initialize internal GPIO connected to M355 AFE die INTC*/
+  DioCfgPin(pADI_GPIO2, PIN1, 0);       
+  DioIenPin(pADI_GPIO2, PIN1, 1); /* Enable P2.1 input path. */
   EiCfg(EXTINT3, INT_EN, INT_FALL); /* Falling edge. */
   
   NVIC_EnableIRQ(AFE_EVT3_IRQn);
