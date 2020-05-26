@@ -2108,7 +2108,13 @@
     <group>
         <name>app</name>
         <file>
+            <name>$PROJ_DIR$\..\AD5940_ADCMeanFIFO.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\..\AD5940_ADCPolling.c</name>
+            <excluded>
+                <configuration>Debug</configuration>
+            </excluded>
         </file>
         <file>
             <name>$PROJ_DIR$\..\main.c</name>
@@ -2143,7 +2149,7 @@
     </group>
     <group>
         <name>startup</name>
-		<file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\..\common\IAR\retarget.c</name>
         </file>
         <file>

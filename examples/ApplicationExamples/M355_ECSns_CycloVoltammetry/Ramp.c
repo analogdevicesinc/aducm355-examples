@@ -336,11 +336,11 @@ static AD5940Err AppRAMPSeqInitGen(void)
     if(AppRAMPCfg.LPTIARtiaSel == LPTIARTIA_OPEN) /* User want to use external RTIA */
         lploop_cfg.LpAmpCfg.LpTiaSW = LPTIASW(2) | LPTIASW(4) | LPTIASW(5) | LPTIASW(9)/*|LPTIASW(10)*/; /* SW5/9 is closed to support external RTIA resistor */
     else
-    	  lploop_cfg.LpAmpCfg.LpTiaSW = LPTIASW(2)|LPTIASW(4)|LPTIASW(5);
+    	  lploop_cfg.LpAmpCfg.LpTiaSW = LPTIASW(2)|LPTIASW(4)|LPTIASW(5); /* Close LPTIASW(8) if using a 2 lead sensor. Close LPTIASW(4) if using 3 leads with reference connected to RE0 */
 
     lploop_cfg.LpDacCfg.LpdacSel = LPDAC0;
-    lploop_cfg.LpDacCfg.DacData12Bit = 0x800;
-    lploop_cfg.LpDacCfg.DacData6Bit = 0;
+    lploop_cfg.LpDacCfg.DacData6Bit = (uint32_t)((AppRAMPCfg.VzeroStart-200)/DAC6BITVOLT_1LSB);;
+    lploop_cfg.LpDacCfg.DacData12Bit = (int32_t)((AppRAMPCfg.RampStartVolt)/DAC12BITVOLT_1LSB) + lploop_cfg.LpDacCfg.DacData6Bit*64;;
     lploop_cfg.LpDacCfg.DataRst = bFALSE;
     lploop_cfg.LpDacCfg.LpDacSW = LPDACSW_VBIAS2LPPA/*|LPDACSW_VBIAS2PIN*/ | LPDACSW_VZERO2LPTIA/*|LPDACSW_VZERO2PIN*/;
     lploop_cfg.LpDacCfg.LpDacRef = LPDACREF_2P5;
@@ -358,12 +358,8 @@ static AD5940Err AppRAMPSeqInitGen(void)
     dsp_cfg.ADCFilterCfg.ADCSinc3Osr = AppRAMPCfg.ADCSinc3Osr;
     dsp_cfg.ADCFilterCfg.ADCRate = ADCRATE_800KHZ;  /* ADC runs at 16MHz clock in this example, sample rate is 800kHz */
     dsp_cfg.ADCFilterCfg.BpSinc3 = bFALSE;        /* We use data from SINC3 filter */
-    dsp_cfg.ADCFilterCfg.Sinc3ClkEnable = bTRUE;
-    dsp_cfg.ADCFilterCfg.Sinc2NotchClkEnable = bTRUE;
     dsp_cfg.ADCFilterCfg.Sinc2NotchEnable = bTRUE;
     dsp_cfg.ADCFilterCfg.BpNotch = bTRUE;
-    dsp_cfg.ADCFilterCfg.WGClkEnable = bFALSE;    /* WG is not used */
-    dsp_cfg.ADCFilterCfg.DFTClkEnable = bFALSE;   /* DFT is not used */
     dsp_cfg.ADCFilterCfg.ADCSinc2Osr = ADCSINC2OSR_1067;  /* Don't care */
     dsp_cfg.ADCFilterCfg.ADCAvgNum = ADCAVGNUM_2;   /* Don't care becase it's disabled */
     AD5940_DSPCfgS(&dsp_cfg);
@@ -916,6 +912,12 @@ AD5940Err AppRAMPISR(void *pBuff, uint32_t *pCount)
         AppRAMPDataProcess((int32_t *)pBuff, &FifoCnt);
         *pCount = FifoCnt;
         AppRAMPCtrl(APPCTRL_STOPNOW, 0);    /* Stop the Wakeup Timer. */
+        
+        /* Reset variables */
+        AppRAMPCfg.RampState = RAMP_STATE0;
+        AppRAMPCfg.bFirstDACSeq = bTRUE;
+        AppRAMPCfg.bDACCodeInc = bTRUE;
+        AppRAMPSeqDACCtrlGen();
         }
     return 0;
     }

@@ -338,16 +338,11 @@ static AD5940Err AppSWVSeqInitGen(void)
   dsp_cfg.ADCFilterCfg.ADCSinc3Osr = AppSWVCfg.ADCSinc3Osr;
   dsp_cfg.ADCFilterCfg.ADCRate = ADCRATE_800KHZ;  /* ADC runs at 16MHz clock in this example, sample rate is 800kHz */
   dsp_cfg.ADCFilterCfg.BpSinc3 = bFALSE;        /* We use data from SINC3 filter */
-  dsp_cfg.ADCFilterCfg.Sinc3ClkEnable = bTRUE;
-  dsp_cfg.ADCFilterCfg.Sinc2NotchClkEnable = bTRUE;
   dsp_cfg.ADCFilterCfg.Sinc2NotchEnable = bTRUE;
   dsp_cfg.ADCFilterCfg.BpNotch = bTRUE;
-  dsp_cfg.ADCFilterCfg.WGClkEnable = bFALSE;    /* WG is not used */  
-  dsp_cfg.ADCFilterCfg.DFTClkEnable = bFALSE;   /* DFT is not used */
   dsp_cfg.ADCFilterCfg.ADCSinc2Osr = ADCSINC2OSR_1067;  /* Don't care */
   dsp_cfg.ADCFilterCfg.ADCAvgNum = ADCAVGNUM_2;   /* Don't care becase it's disabled */
   AD5940_DSPCfgS(&dsp_cfg);
-
   /* Sequence end. */
   AD5940_SEQGenInsert(SEQ_STOP()); /* Add one extral command to disable sequencer for initialization sequence because we only want it to run one time. */
 

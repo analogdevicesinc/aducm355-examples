@@ -39,7 +39,7 @@ typedef enum {
 #if (OPT_RAMP_MEAS)
 static int num_ramp_meas = NUM_OPT_RAMP_MEAS;
 #else
-static int num_ramp_meas = 1;   /* Set to 1 to measure Current only */
+static int num_ramp_meas = 3;   /* Set to 1 to measure Current only */
 #endif
 
 

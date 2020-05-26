@@ -66,7 +66,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>8.32.1.18618</state>
+                    <state>8.40.1.21529</state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -116,7 +116,7 @@
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -133,7 +133,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -156,7 +156,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>26</version>
+                    <version>27</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -689,7 +689,7 @@
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>22</version>
+                <version>23</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -1009,6 +1009,22 @@
                     <name>OILinkExtraOption</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>IlinkRawBinaryFile2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySymbol2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySegment2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinaryAlign2</name>
+                    <state></state>
+                </option>
             </data>
         </settings>
         <settings>
@@ -1043,12 +1059,6 @@
         <file>
             <name>$PROJ_DIR$\..\M355_SPI0_Slave.c</name>
         </file>
-        <file>
-            <name>$PROJ_DIR$\..\M355_SPI2_Slave.c</name>
-            <excluded>
-                <configuration>Debug</configuration>
-            </excluded>
-        </file>
     </group>
     <group>
         <name>common</name>
@@ -1058,11 +1068,11 @@
         <file>
             <name>$PROJ_DIR$\..\..\..\..\common\ClkLib.c</name>
         </file>
-		<file>
-            <name>$PROJ_DIR$\..\..\..\..\common\IntLib.c</name>
-        </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\common\DioLib.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\common\IntLib.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\common\SpiLib.c</name>
@@ -1073,7 +1083,7 @@
     </group>
     <group>
         <name>startup</name>
-		<file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\..\common\IAR\retarget.c</name>
         </file>
         <file>

@@ -2112,7 +2112,7 @@
             <name>$PROJ_DIR$\..\AD5940Main.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\BodyImpedance.c</name>
+            <name>$PROJ_DIR$\..\M355_4WireZ.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\main.c</name>
@@ -2144,7 +2144,7 @@
     </group>
     <group>
         <name>startup</name>
-		<file>
+        <file>
             <name>$PROJ_DIR$\..\..\..\..\common\IAR\retarget.c</name>
         </file>
         <file>

@@ -97,8 +97,8 @@ void ClockInit(void)
 void UartInit(void)
 {
    DioCfgPin(pADI_GPIO0,PIN10|PIN11,1);        // Setup P0.10, P0.11 as UART pin
-   UrtCfg(pADI_UART0,B57600,
-          (BITM_UART_COMLCR_WLS|3),0);         // Configure UART for 57600 baud rate
+   UrtCfg(pADI_UART0,B230400,
+          (BITM_UART_COMLCR_WLS|3),0);         // Configure UART for 230400 baud rate
    UrtFifoCfg(pADI_UART0, RX_FIFO_1BYTE,       // Configure the UART FIFOs for 8 bytes deep
               BITM_UART_COMFCR_FIFOEN);
    UrtFifoClr(pADI_UART0, BITM_UART_COMFCR_RFCLR// Clear the Rx/TX FIFOs

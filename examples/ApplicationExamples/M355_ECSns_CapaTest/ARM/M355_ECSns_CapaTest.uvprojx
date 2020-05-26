@@ -17,7 +17,7 @@
         <TargetCommonOption>
           <Device>ADuCM355</Device>
           <Vendor>Analog Devices</Vendor>
-          <PackID>AnalogDevices.ADuCM355_DFP.1.0.2</PackID>
+          <PackID>AnalogDevices.ADuCM355_DFP.1.0.3</PackID>
           <PackURL>http://download.analog.com/tools/EZBoards/ADuCM355/Releases/</PackURL>
           <Cpu>IRAM(0x20000000,0x02000) IRAM2(0x20002000,0x02000) IROM(0x00000000,0x20000) XRAM(0x20004000,0x04000) XRAM2(0x20040000,0x08000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -469,26 +469,26 @@
       </component>
     </components>
     <files>
-      <file attr="config" category="header" condition="ADuCM355" name="ADuCM355\inc\adi_config.h" version="0.0.0">
+      <file attr="config" category="header" condition="ADuCM355" name="ADuCM355\inc\adi_config.h" version="0.9.4">
         <instance index="0">RTE\Device\ADuCM355\adi_config.h</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Analog Devices" Cversion="0.9.4" condition="ADuCM355 CMSIS Device"/>
-        <package license="License\2020-01-13-CMDFP Click Thru SLA.rtf" name="ADuCM355_DFP" schemaVersion="1.2" supportContact="http://www.analog.com/en/content/technical_support_page/fca.html" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="1.0.2"/>
+        <package license="License\2020-01-13-CMDFP Click Thru SLA.rtf" name="ADuCM355_DFP" schemaVersion="1.2" supportContact="http://www.analog.com/en/content/technical_support_page/fca.html" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="1.0.3"/>
         <targetInfos>
           <targetInfo name="ADuCM355"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" condition="ADuCM355_ARM" name="ADuCM355\common\ARM\startup_ADuCM355.s" version="0.0.0">
+      <file attr="config" category="source" condition="ADuCM355_ARM" name="ADuCM355\common\ARM\startup_ADuCM355.s" version="0.9.4">
         <instance index="0">RTE\Device\ADuCM355\startup_ADuCM355.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Analog Devices" Cversion="0.9.4" condition="ADuCM355 CMSIS Device"/>
-        <package license="License\2020-01-13-CMDFP Click Thru SLA.rtf" name="ADuCM355_DFP" schemaVersion="1.2" supportContact="http://www.analog.com/en/content/technical_support_page/fca.html" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="1.0.2"/>
+        <package license="License\2020-01-13-CMDFP Click Thru SLA.rtf" name="ADuCM355_DFP" schemaVersion="1.2" supportContact="http://www.analog.com/en/content/technical_support_page/fca.html" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="1.0.3"/>
         <targetInfos>
           <targetInfo name="ADuCM355"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" condition="ADuCM355" name="ADuCM355\common\system_ADuCM355.c" version="0.0.0">
+      <file attr="config" category="source" condition="ADuCM355" name="ADuCM355\common\system_ADuCM355.c" version="0.9.4">
         <instance index="0">RTE\Device\ADuCM355\system_ADuCM355.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Analog Devices" Cversion="0.9.4" condition="ADuCM355 CMSIS Device"/>
-        <package license="License\2020-01-13-CMDFP Click Thru SLA.rtf" name="ADuCM355_DFP" schemaVersion="1.2" supportContact="http://www.analog.com/en/content/technical_support_page/fca.html" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="1.0.2"/>
+        <package license="License\2020-01-13-CMDFP Click Thru SLA.rtf" name="ADuCM355_DFP" schemaVersion="1.2" supportContact="http://www.analog.com/en/content/technical_support_page/fca.html" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="1.0.3"/>
         <targetInfos>
           <targetInfo name="ADuCM355"/>
         </targetInfos>
