@@ -10,7 +10,7 @@ Analog Devices Software License Agreement.
 /*
    Decription:
 		- Press Pushbutton PB0 on Eval board to send a string to the UART reflecting GPIO status
-		- Default Baud rate is 57600-8-N-1
+		- Default Baud rate is 230400-8-N-1
 		- Pressing S2 button will send "Button S2 pressed"
 		- Pressing S3 button will send "Button S3 pressed"
 		- DS2 LED will flash each time either S2 or S3 button on evaluation board is pressed.
@@ -42,7 +42,7 @@ int main (void)
   
   AD5940_Initialize();
   ClockInit();                                // Init system clocks
-  UartInit();                                 // Init UART for 57600-8-N-1
+  UartInit();                                 // Init UART for 230400-8-N-1
   GPIOInit();                                 // Init GPIO pins
    
 
@@ -105,7 +105,6 @@ void UartInit(void)
               |BITM_UART_COMFCR_TFCLR);
 
    UrtIntCfg(pADI_UART0,BITM_UART_COMIEN_ERBFI|BITM_UART_COMIEN_ELSI);
- //  NVIC_EnableIRQ(UART_EVT_IRQn);            // Enable UART interrupt source in NVIC
 }
 
 // Interrupt handler for P1.0 - S2 button
