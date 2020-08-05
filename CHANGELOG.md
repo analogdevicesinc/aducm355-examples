@@ -4,6 +4,7 @@ ADuCM355 Examples Change log
 ## 0.2.0(Ongoing)
 
 ### Added
+* Added M355_WaterQuality example project
 * Add .ewd file extension to iar folder to all projects to select J-Link as default debug interface
 * Add README and gitignore
 * Add license
