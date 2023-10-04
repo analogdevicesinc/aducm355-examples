@@ -642,7 +642,7 @@
                 <option>
                     <name>OOCOutputFormat</name>
                     <version>3</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>OCOutputOverride</name>
@@ -650,7 +650,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state></state>
+                    <state>M356_4WireZ.hex</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -658,7 +658,7 @@
                 </option>
                 <option>
                     <name>OOCObjCopyEnable</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
             </data>
         </settings>
@@ -668,7 +668,7 @@
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>0</hasPrio>
+                <hasPrio>16</hasPrio>
                 <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
@@ -2163,11 +2163,52 @@
     <group>
         <name>CMSIS-Pack</name>
         <tag>CMSISPack.Component</tag>
+        <file>
+            <name>$PROJ_DIR$\RTE\RTE_Components.h</name>
+        </file>
         <group>
-            <name>Device Retarget UART</name>
+            <name>Device.Peripheral Libraries UART</name>
             <tag>CMSISPack.Component</tag>
             <file>
-                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/IAR/retarget.c</name>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/UrtLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries RST</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/RstLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries INT</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/IntLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries GPIO</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/DioLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries CLOCK</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/ClkLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.AFE Operation</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/ad5940lib/ad5940.c</name>
+            </file>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/ADuCM355Port.c</name>
             </file>
         </group>
         <group>
@@ -2184,53 +2225,12 @@
             </file>
         </group>
         <group>
-            <name>Device.AFE Operation</name>
+            <name>Device Retarget UART</name>
             <tag>CMSISPack.Component</tag>
             <file>
-                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/ad5940lib/ad5940.c</name>
-            </file>
-            <file>
-                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/ADuCM355Port.c</name>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/IAR/retarget.c</name>
             </file>
         </group>
-        <group>
-            <name>Device.Peripheral Libraries CLOCK</name>
-            <tag>CMSISPack.Component</tag>
-            <file>
-                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/ClkLib.c</name>
-            </file>
-        </group>
-        <group>
-            <name>Device.Peripheral Libraries GPIO</name>
-            <tag>CMSISPack.Component</tag>
-            <file>
-                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/DioLib.c</name>
-            </file>
-        </group>
-        <group>
-            <name>Device.Peripheral Libraries INT</name>
-            <tag>CMSISPack.Component</tag>
-            <file>
-                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/IntLib.c</name>
-            </file>
-        </group>
-        <group>
-            <name>Device.Peripheral Libraries RST</name>
-            <tag>CMSISPack.Component</tag>
-            <file>
-                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/RstLib.c</name>
-            </file>
-        </group>
-        <group>
-            <name>Device.Peripheral Libraries UART</name>
-            <tag>CMSISPack.Component</tag>
-            <file>
-                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#1.0.4}$\ADuCM355/common/UrtLib.c</name>
-            </file>
-        </group>
-        <file>
-            <name>$PROJ_DIR$\RTE\RTE_Components.h</name>
-        </file>
     </group>
     <cmsisPackSettings>
         <rte>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
