@@ -12,7 +12,6 @@ Objects/
 *.exe
 *.log
 *.csv
-*.txt
 *.ini
 *.xlsx
 *.bmp
