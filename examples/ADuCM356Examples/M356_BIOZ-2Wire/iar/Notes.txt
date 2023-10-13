@@ -1,0 +1,1 @@
+The ADuCM356 examples are suported using the CMSIS Pack. Check the iar_cmsis folder for CMSIS compatible IAR build.
