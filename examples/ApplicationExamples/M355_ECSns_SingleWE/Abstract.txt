@@ -1,1 +1,0 @@
-Example application demonstrating how to measure a standard 3 lead EC sensor

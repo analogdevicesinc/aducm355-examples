@@ -1,1 +1,0 @@
-Example application demonstrating the various power modes of the ADuCM355
