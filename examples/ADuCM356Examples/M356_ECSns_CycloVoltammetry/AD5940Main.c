@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -31,7 +31,8 @@ static int32_t RampShowResult(float *pData, uint32_t DataCount)
   uint32_t index = 0;
   printf("\n%s\n\n",opt_ramp_meas[imeas]);
   /* Print data*/
-  for(int i=0;i<DataCount;i++)
+	int i;
+  for(i=0;i<DataCount;i++)
   {
     printf("index:%d, %.3f\n", index++, pData[i]);
     //i += 10;  /* Print though UART consumes too much time. */

@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -681,7 +681,8 @@ static uint32_t EDARtiaAutoScaling(fImpCar_Type * const pImpedance, uint32_t uiD
   fImpCar_Type SumImp={0,0};
 
   /* Get Averaged Magnitude Result */
-  for(int i=0;i<uiDataCount;i++)
+	int i;
+  for(i=0;i<uiDataCount;i++)
   {
     SumImp.Real += pImpedance[i].Real;
     SumImp.Image += pImpedance[i].Image;
@@ -718,7 +719,8 @@ static AD5940Err AppEDADataProcess(int32_t * const pData, uint32_t *pDataCount)
   *pDataCount = 0;
 
   /* EDA results are DFT results */
-  for(uint32_t i=0; i<DataCount; i++)
+	uint32_t i;
+  for(i=0; i<DataCount; i++)
   {
     pData[i] &= 0x3ffff; /* @todo option to check ECC */
     if(pData[i]&(1<<17)) /* Bit17 is sign bit */
@@ -738,7 +740,8 @@ static AD5940Err AppEDADataProcess(int32_t * const pData, uint32_t *pDataCount)
       DftResCnt -= 4;
       pDftRes += 4; /* Discard the first 4 results */
     }
-    for(uint32_t i=0;i<DftResCnt;i++)
+		uint32_t i;
+    for(i=0;i<DftResCnt;i++)
     {
       SumReal += pDftRes[i].Real;
       SumImage += pDftRes[i].Image;
@@ -758,7 +761,8 @@ static AD5940Err AppEDADataProcess(int32_t * const pData, uint32_t *pDataCount)
   {
     iImpCar_Type * const pSrc = (iImpCar_Type*)pData;
     fImpCar_Type * const pOut = (fImpCar_Type*)pData;
-    for(uint32_t i=0; i<DataCount/2; i++)
+		uint32_t i;
+    for(i=0; i<DataCount/2; i++)
     {
       fImpCar_Type DftCurr;
       fImpCar_Type res;

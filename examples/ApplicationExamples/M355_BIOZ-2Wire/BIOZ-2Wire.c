@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -525,7 +525,8 @@ static AD5940Err AppBIOZDataProcess(int32_t * const pData, uint32_t *pDataCount)
   DataCount = (DataCount/2)*2; /* One DFT result has two data in FIFO, real part and imaginary part.  */
 
   /* Convert DFT result to int32_t type */
-  for(uint32_t i=0; i<DataCount; i++)
+	uint32_t i;
+  for(i=0; i<DataCount; i++)
   {
     pData[i] &= 0x3ffff;
     if(pData[i]&(1<<17)) /* Bit17 is sign bit */
@@ -533,7 +534,7 @@ static AD5940Err AppBIOZDataProcess(int32_t * const pData, uint32_t *pDataCount)
       pData[i] |= 0xfffc0000; /* Data is 18bit in two's complement, bit17 is the sign bit */
     }
   }
-  for(uint32_t i=0; i<ImpResCount; i++)
+  for(i=0; i<ImpResCount; i++)
   {
     fImpCar_Type DftCurr;
     fImpCar_Type res;

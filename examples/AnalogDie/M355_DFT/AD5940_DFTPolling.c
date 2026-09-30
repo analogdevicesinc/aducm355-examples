@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -64,11 +64,11 @@ void AD5940_Main(void)
       real = AD5940_ReadAfeResult(AFERESULT_DFTREAL);
       if(real&(1<<17))
         real |= 0xfffc0000; /* Data is 18bit in two's complement, bit17 is the sign bit */
-      printf("DFT: %ld,", real);      
+      printf("DFT: %u,", real);      
       image = AD5940_ReadAfeResult(AFERESULT_DFTIMAGE);
       if(image&(1<<17))
         image |= 0xfffc0000; /* Data is 18bit in two's complement, bit17 is the sign bit */
-      printf("%ld,", image);      
+      printf("%u,", image);      
       printf("Mag:%f\n", sqrt((float)real*real + (float)image*image));
     }
   }

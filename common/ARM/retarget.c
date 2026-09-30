@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -12,11 +12,18 @@ Analog Devices Software License Agreement.
 #include "UrtLib.h"
 
 /* We want a warning if semi-hosting libraries are used. */
-#pragma import(__use_no_semihosting_swi)
+#if defined(__ARMCC_VERSION) && !defined(__ARMCOMPILER_VERSION) 
+/* Arm Compiler 5 (armcc) */ 
+#pragma import(__use_no_semihosting_swi) 
 
 struct __FILE { int handle; /* Add whatever you need here */ };
 FILE __stdout;
 FILE __stdin;
+
+#elif defined(__ARMCOMPILER_VERSION) 
+/* Arm Compiler 6 (armclang) */ 
+__attribute__((used)) int __ARM_use_no_semihosting = 0; 
+#endif 
 
 int fputc(int c, FILE *f) {
   UrtTx(pADI_UART0,c);

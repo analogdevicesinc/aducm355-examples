@@ -386,7 +386,7 @@ float average, average1 = 0.0;
 /* Depending on the data type, do appropriate data pre-process before return back to controller */
 static AD5940Err AppAMPDataProcess(int32_t * const pData, uint32_t *pDataCount)
 {
-  uint32_t i, j, datacount, NumData, AverageCh0, AverageCh1;
+  uint32_t i, j, datacount, NumData, AverageCh0 = 0, AverageCh1 = 0;
   
   datacount = *pDataCount;
   

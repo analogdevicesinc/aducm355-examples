@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -37,7 +37,8 @@ int32_t AMPShowResult(float *pData, uint32_t DataCount)
   AppAMPCfg_Type *pAmpCfg;
   AppAMPGetCfg(&pAmpCfg); 
   float Current_uA = 0.0;
-  for(int i=0;i<DataCount;i++)
+	int i;
+  for(i=0;i<DataCount;i++)
   {
     Current_uA = AppAMPCalcCurrent(pAmpCfg->SensorCh0.ResultBuffer[i], pAmpCfg->SensorCh0.RtiaCalValue.Magnitude);
     printf("Index %i:, %d , %.3f uA , %f ppm\n", i, pAmpCfg->SensorCh0.ResultBuffer[i], Current_uA, Current_uA/CO_uA_Per_PPM);

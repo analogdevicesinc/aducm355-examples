@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -26,7 +26,8 @@ int32_t BIOZShowResult(uint32_t *pData, uint32_t DataCount)
   AppBIOZCtrl(BIOZCTRL_GETFREQ, &freq);
   
   /*Process data*/
-  for(int i=0;i<DataCount;i++)
+	int i;
+  for(i=0;i<DataCount;i++)
   {
     printf("Freq:%.2f ", freq);
     //printf("RzMag: %f Ohm , RzPhase: %f \n",AD5940_ComplexMag(&pImp[i]), AD5940_ComplexPhase(&pImp[i])*180/MATH_PI);

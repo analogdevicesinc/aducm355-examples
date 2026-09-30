@@ -7,7 +7,7 @@
  @date:    $Date: 2017-08-21 14:09:35 +0100 (Mon, 21 Aug 2017) $
  -----------------------------------------------------------------------------
 
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -479,6 +479,8 @@ static AD5940Err RampDacRegUpdate(uint32_t *pDACData)
                 break;
             case RAMP_STOP:
                 break;
+						default:
+							  break;
             }
         }
     else

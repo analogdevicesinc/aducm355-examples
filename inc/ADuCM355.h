@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -38,6 +38,19 @@ Analog Devices Software License Agreement.
 #define __FPU_PRESENT          0u  /*!< FPU is not present                   */
 #define __NVIC_PRIO_BITS       3u  /*!< Number of Bits for Priority Levels   */
 #define __Vendor_SysTickConfig 0  /*!< 1 if different SysTick Config is used */
+
+#if defined(__ARMCOMPILER_VERSION) && !defined(__STDC_VERSION__ )
+  #if !defined(__INLINE)
+    #define __INLINE __inline__
+  #endif
+  #if !defined(__STATIC_INLINE)
+    #define __STATIC_INLINE static __inline__
+  #endif
+  #if !defined(__STATIC_FORCEINLINE)
+    #define __STATIC_FORCEINLINE static __inline__ __attribute__((always_inline))
+  #endif
+#endif
+
 #include "core_cm3.h"
 
 

@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -234,7 +234,7 @@ uint8_t RtcWaitSyncSR2(uint16_t mask)
    }
    else if(mask==BITM_RTC_SR2_WSYNCCR1MIR)
    {
-      while(!(pADI_RTC1->SR2)&mask);/* 1 indicates results of a posted write are visible to CPU */
+      while(!((pADI_RTC1->SR2)&mask));/* 1 indicates results of a posted write are visible to CPU */
    }
    return 1;
 }

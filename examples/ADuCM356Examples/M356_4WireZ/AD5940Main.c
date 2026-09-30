@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -27,7 +27,8 @@ int32_t BIAShowResult(uint32_t *pData, uint32_t DataCount)
   
   printf("Freq:%.2f  , ", freq);
   /*Process data*/
-  for(int i=0;i<DataCount;i++)
+	int i;
+  for(i=0;i<DataCount;i++)
   {
     printf(" %f ,  %f \n",pImp[i].Magnitude,pImp[i].Phase);
   }

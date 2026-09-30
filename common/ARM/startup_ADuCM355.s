@@ -1,12 +1,12 @@
 ;/**************************************************************************//**
-; * @file     startup_ADuCM355.s
+; * @file     startup_ADuCM355.S
 ; * @brief    CMSIS Cortex-M ARMv7-M based Core Device Startup File for
 ; *           Device ADuCM355
 ; * @version  V5.4.0
 ; * @date     12. December 2018
 ; ******************************************************************************/
 ;/*
-; * Copyright (c) 2009-2018 Arm Limited. All rights reserved.
+; * Copyright (c) 2009-2026 Arm Limited. All rights reserved.
 ; *
 ; * SPDX-License-Identifier: Apache-2.0
 ; *

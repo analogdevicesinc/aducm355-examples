@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -321,7 +321,7 @@ int DmaPeripheralStructSetup(int iChan, int iCfg)
 	DmaDesc *Desc;
 
    Desc = Dma_GetDescriptor(iChan);
-   memset(Desc,0,sizeof(Desc));
+   memset(Desc,0,sizeof(*Desc));
     // Common configuration of all the descriptors used here
    Desc->ctrlCfg.Bits.cycle_ctrl       = (iCfg & 0x7);
    Desc->ctrlCfg.Bits.r_power          = 0;
@@ -660,11 +660,13 @@ uint8_t DataFifoECC(uint32_t data)
                                        0x001f7161,0x00820f1b};
    uint32_t tmp;
    uint8_t result = 0;
-   for(int32_t bit=6;bit>=0;bit--)
+   int32_t bit;
+   for(bit=6;bit>=0;bit--)
    {
       tmp = data&eccMsk[bit];
       /*check parity*/
-      for (uint32_t i=0;i<25;i++)
+      uint32_t i;
+      for (i=0;i<25;i++)
       {
          eccBit[bit] = eccBit[bit]^(tmp&0x00000001);
          tmp = tmp>>1;

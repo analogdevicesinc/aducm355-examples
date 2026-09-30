@@ -7,7 +7,7 @@
  @date:    $Date: 2017-08-21 14:09:35 +0100 (Mon, 21 Aug 2017) $
  -----------------------------------------------------------------------------
 
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -234,7 +234,8 @@ void UART_Int_Handler(void)
   {
     uint32_t count;
     count = pADI_UART0->COMRFC;  /* Receive FIFO count */
-    for(int i=0;i < count; i++)
+		int i;
+    for(i=0;i < count; i++)
     {
       char c;
       c = pADI_UART0->COMRX&0xff;
@@ -245,7 +246,8 @@ void UART_Int_Handler(void)
   {
     uint32_t count;
     count = pADI_UART0->COMRFC;  /* Receive FIFO count */
-    for(int i=0;i < count; i++)
+		int i;
+    for(i=0;i < count; i++)
     {
       char c;
       c = pADI_UART0->COMRX&0xff;

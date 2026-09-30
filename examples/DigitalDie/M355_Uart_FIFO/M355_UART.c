@@ -91,7 +91,7 @@ void UartInit(void)
    pADI_GPIO0->CFG |= 0x500000;                // Setup P0[11:10] as UART pins
    pADI_UART0->COMLCR2 = 0x3;                  // Set PCLk oversampling rate 32. (PCLK to UART baudrate generator is /32)
    UrtCfg(pADI_UART0,B57600,
-          (BITM_UART_COMLCR_WLS|3),0);         // Configure UART for 115200 baud rate
+          (BITM_UART_COMLCR_WLS|3),0);         // Configure UART for 57600 baud rate
    UrtFifoCfg(pADI_UART0, RX_FIFO_14BYTE,      // Configure the UART FIFOs for 14 bytes deep
               BITM_UART_COMFCR_FIFOEN);
    UrtFifoClr(pADI_UART0, BITM_UART_COMFCR_RFCLR// Clear the Rx/TX FIFOs
@@ -177,4 +177,5 @@ void Ext_Int1_Handler()
    ucButtonPress = 1;
 
 }
+
 

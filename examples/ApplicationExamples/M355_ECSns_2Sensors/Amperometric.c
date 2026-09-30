@@ -377,11 +377,13 @@ static AD5940Err AppAMPDataProcess(int32_t * const pData, uint32_t *pDataCount)
   uint32_t i, j, datacount, NumData, AverageCh0, AverageCh1;
   
   datacount = *pDataCount;
-  
   NumData = datacount/(AppAmpCfg.NumSamplesAvg*2);
   
   for(i = 0; i< NumData; i++)
   {
+    AverageCh0 = 0;   /* reset accumulator each block */
+    AverageCh1 = 0;   /* reset accumulator each block */
+    
     for(j = 0; j<AppAmpCfg.NumSamplesAvg; j++)
     {
       AverageCh0 += pData[j] & 0xffff;

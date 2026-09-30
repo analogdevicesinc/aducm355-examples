@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -14,7 +14,7 @@ Analog Devices Software License Agreement.
 #include "math.h"
 #include "ChronoAmperometric.h"
 
-#define APPBUFF_SIZE 1000
+#define APPBUFF_SIZE 500
 #define n 8
 
 #if defined ( __ICCARM__ )
@@ -22,6 +22,9 @@ Analog Devices Software License Agreement.
 uint32_t AppBuff[n][APPBUFF_SIZE];
 #elif defined (__CC_ARM)
 uint32_t AppBuff[n][APPBUFF_SIZE] __attribute__((section(".ARM.__at_0x20040000"))); // use up to 32K bytes max, compiler linker file must have been modified for this to work !! Use "USER_SRAM_MODE = 2" setting;
+#elif defined (__ARMCOMPILER_VERSION ) && (__ARMCOMPILER_VERSION >= 6000000)
+__attribute__ ((used, section(".ARM.__at_0x20040000")))
+uint32_t AppBuff[n][APPBUFF_SIZE];
 #elif defined (__GNUC__)
 __attribute__ ((section(".never_retained_ram")))
 uint32_t AppBuff[n][APPBUFF_SIZE];
@@ -46,13 +49,13 @@ int32_t AMPShowResult(float *pData, uint32_t DataCount)
     newTest++;
     printf("\n%s\n",opt_chronoamp_meas[imeas]);
   }
-  
-  for(int i=0;i<DataCount;i++)
+  int i;
+  for(i=0;i<DataCount;i++)
   {
     if(imeas == OPT_CHRONOAMP_MEAS_VSE0 || imeas == OPT_CHRONOAMP_MEAS_VRE0)
-      printf("index:%ld, %f\n", pindex++, AD5940_ADCCode2Volt(pData[i], ADCPGA_1P5, 1.82));
+      printf("index:%u, %f\n", pindex++, AD5940_ADCCode2Volt((uint32_t)pData[i], ADCPGA_1P5, 1.82));
     else 
-      printf("index:%ld, %f\n", pindex++, AppCHRONOAMPCalcCurrent(pData[i]));
+      printf("index:%u, %f\n", pindex++, AppCHRONOAMPCalcCurrent((uint32_t)pData[i]));
   }
   return 0;
 }
@@ -209,8 +212,8 @@ void AD5940_Main(void)
       
       if(pAMPCfg->EndSeq) /* End sequence only set at end of transient */
       {
-        
-        for(int i = 0; i<IntCount; i++)
+        int i;
+        for(i = 0; i<IntCount; i++)
         {
           AMPShowResult((float*)AppBuff[i], temp[i]); /* Show the results to UART */
         }
