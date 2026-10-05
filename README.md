@@ -6,9 +6,10 @@ This repository provides a comprehensive selection of block level and applicatio
 # Useful links
 * [ADuCM355 Product Page](https://www.analog.com/en/products/aducm355.html)
 * [ADuCM355 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ADuCM355.pdf)
-* [ADuCM355 FAQ](https://ez.analog.com/analog-microcontrollers/precision-microcontrollers/w/documents/14004/aducm355-faq)
+* [ADuCM355 FAQ](https://ez.analog.com/microcontrollers/precision-microcontrollers/a/documents/do23872/aducm355)
 * [ADuCM355 Hardware Reference Manual](https://www.analog.com/media/en/technical-documentation/user-guides/ADuCM355-Hardware-Reference-Manual-UG-1262.pdf)
 * [EVAL-ADuCM355](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADuCM355.html)
+* [ADuCM355 DFP](https://www.keil.arm.com/packs/aducm355_dfp-analogdevices/versions/)
 
 
 # How to Use it
@@ -44,4 +45,4 @@ To run the example code, you need the ADuCM355 evaluation board, and the softwar
 
 
 # License
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
