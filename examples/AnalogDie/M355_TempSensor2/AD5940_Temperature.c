@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -99,7 +99,8 @@ float AD5940_TemperatureMeasure(void)
   pADI_AFE->TEMPCON1 = 0;       //Power up temp sensor
   AD5940_Delay10us(1000);
   /* Step 1: Measure 16 VBE voltage individualy and find average */
-  for(uint8_t i = 0; i<16; i++)
+	uint8_t i;
+  for(i = 0; i<16; i++)
   {
     pADI_AFE->TEMPCON1 = (1u<<i);
     AD5940_Delay10us(100);
@@ -115,7 +116,7 @@ float AD5940_TemperatureMeasure(void)
   /* Step 2: Close switches in groups of 4 VBE voltage and calculate average of the 4 */
   TempResult = 0;
   average = 0.0;
-  for(uint8_t i=0;i<16;)
+  for(i=0;i<16;)
   {
     pADI_AFE->TEMPCON1 = (0x000F<<i);  // Connect 4x Isources to the VBE transistor in groups
     i += 4;

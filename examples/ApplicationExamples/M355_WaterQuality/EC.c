@@ -59,12 +59,12 @@ float Meter_EC(void)
   float Temp_Result = 0;
   Result_Imp Temp_Imp = {0,0,0};
   
-  EC_Test(ec_cfg.HstiaRtiaSel,ec_cfg.RcalVal);
+  EC_Test(ec_cfg.HstiaRtiaSel, (uint32_t)ec_cfg.RcalVal);
   Rcal_index = EC_RCALCho(&Rcal_ec,&Rz_ec);
-  EC_Test(ec_cfg.HstiaRtiaSel,Rcal_index);
+  EC_Test(ec_cfg.HstiaRtiaSel,(uint32_t)Rcal_index);
   Rtia_index = EC_RTIACho(&Rcal_ec,&Rz_ec,Rcal_index);
   printf("Rtia:%f,Rcal:%f",Rtia_index,Rcal_index);
-  EC_Test(Rtia_index,Rcal_index);
+  EC_Test((uint32_t)Rtia_index,(uint32_t)Rcal_index);
   
   Temp_Imp = EC_Res_Cal(&Rcal_ec,&Rz_ec,Rcal_index);
   printf("EC(Mag):%.4f\n", Temp_Imp.Mag_result);

@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -492,7 +492,8 @@ int32_t AppIMPDataProcess(int32_t * const pData, uint32_t *pDataCount)
   DataCount = (DataCount/4)*4;/* We expect RCAL data together with Rz data. One DFT result has two data in FIFO, real part and imaginary part.  */
 
   /* Convert DFT result to int32_t type */
-  for(uint32_t i=0; i<DataCount; i++)
+	uint32_t i;
+  for(i=0; i<DataCount; i++)
   {
     pData[i] &= 0x3ffff; /* @todo option to check ECC */
     if(pData[i]&(1L<<17)) /* Bit17 is sign bit */
@@ -500,7 +501,7 @@ int32_t AppIMPDataProcess(int32_t * const pData, uint32_t *pDataCount)
       pData[i] |= 0xfffc0000; /* Data is 18bit in two's complement, bit17 is the sign bit */
     }
   }
-  for(uint32_t i=0; i<ImpResCount; i++)
+  for(i=0; i<ImpResCount; i++)
   {
     iImpCar_Type *pDftRcal, *pDftRz;
 

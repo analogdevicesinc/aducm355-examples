@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -41,15 +41,16 @@ int main(void)
 {
     int ret, ret2;
     pADI_AFEWDT->WDTCON &= (~BITM_AFEWDT_WDTCON_EN);
-
-    for(uint32_t i = 0; i < 500000; i++);
+    uint32_t i;
+    for(i = 0; i < 500000; i++);
 
     ClockInit();
     UartInit();
-    for(uint8_t i = 0; i < DATA_SZ; i++)
+  	uint8_t j;
+    for(j = 0; j < DATA_SZ; j++)
     {
-        uiRamDataSrc[i] = 0x12345600 + i;
-        uiRamDataDes[i] = 0;//clear
+        uiRamDataSrc[j] = 0x12345600 + j;
+        uiRamDataDes[j] = 0;//clear
     }
     DmaBase();//Init data base pointer of DMA controller
     ret = SoftDMA_Test();
@@ -109,7 +110,8 @@ int SoftDMA_Test(void)
     while(software_dma_done == 0);//wait dma complete
 
     //compare data
-    for(uint8_t i = 0; i < DATA_SZ; i++)
+		uint8_t i;
+    for(i = 0; i < DATA_SZ; i++)
     {
         if(uiRamDataDes[i] != (0x12345600 + i))
             return 0;//error
@@ -121,7 +123,8 @@ int FlashDMA_Test(void)
 {
     char flag_need_erase = 0;
     //compare data
-    for(uint8_t i = 0; i < DATA_SZ; i++)
+	  uint8_t i;
+    for(i = 0; i < DATA_SZ; i++)
     {
         if(pFlashData[i] != 0xffffffff)
         {
@@ -149,7 +152,7 @@ int FlashDMA_Test(void)
 
     while(flash_dma_done == 0);
     //compare data
-    for(uint8_t i = 0; i < DATA_SZ; i++)
+    for(i = 0; i < DATA_SZ; i++)
     {
         if(pFlashData[i] != (0x12345600 + i))
             return 0;//error
@@ -164,7 +167,7 @@ void UartInit(void)
     DioCfgPin(pADI_GPIO0, PIN11, 1);             // Setup P0.11 as UART pin
     pADI_UART0->COMLCR2 = 0x3;                  // Set PCLk oversampling rate 32. (PCLK to UART baudrate generator is /32)
     UrtCfg(pADI_UART0, B57600,
-           (BITM_UART_COMLCR_WLS | 3), 0);      // Configure UART for 115200 baud rate
+            (BITM_UART_COMLCR_WLS | 3), 0);      // Configure UART for 57600 baud rate
     UrtFifoCfg(pADI_UART0, RX_FIFO_14BYTE,      // Configure the UART FIFOs for 8 bytes deep
                BITM_UART_COMFCR_FIFOEN);
     UrtFifoClr(pADI_UART0, BITM_UART_COMFCR_RFCLR// Clear the Rx/TX FIFOs

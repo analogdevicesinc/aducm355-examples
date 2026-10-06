@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -130,7 +130,8 @@ void UART_Int_Handler(void)
   if ((ucCOMIID0 & 0xE) == 0x4)	          // Receive byte
   {
     iNumBytesInFifo = pADI_UART0->COMRFC;    // read the Num of bytes in FIFO
-    for (uint8_t i=0; i<iNumBytesInFifo;i++)
+		uint8_t i;
+    for (i=0; i<iNumBytesInFifo;i++)
     {
       ucComRx = UrtRx(pADI_UART0);
       if((ucComRx==0x32)|(ucComRx==0x02))    //sleep
@@ -150,7 +151,8 @@ void UART_Int_Handler(void)
   if ((ucCOMIID0 & 0xE) == 0xC)	          // UART Time-out condition
   {
     iNumBytesInFifo = pADI_UART0->COMRFC;    // read the Num of bytes in FIFO
-    for (uint8_t i=0; i<iNumBytesInFifo;i++)
+		uint8_t i;
+    for (i=0; i<iNumBytesInFifo;i++)
     {
       ucComRx = UrtRx(pADI_UART0);
       if(ucInCnt>=UART_INBUFFER_LEN)

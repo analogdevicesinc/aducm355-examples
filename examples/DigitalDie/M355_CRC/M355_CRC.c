@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -122,7 +122,8 @@ uint32_t UartPrint()
    sLength = strlen(szTemp);
    if(sLength<STRING_BUFFER_LENGTH)
    {
-      for(uint32_t ix=0;ix<sLength;ix++)
+		  uint32_t ix;
+      for(ix=0;ix<sLength;ix++)
       {
          UrtTx(pADI_UART0,szTemp[ix]);
          while(!(UrtLinSta(pADI_UART0)&BITM_UART_COMLSR_TEMT)); //wait for tx finish

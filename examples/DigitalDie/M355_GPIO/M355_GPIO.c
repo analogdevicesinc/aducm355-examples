@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -51,7 +51,7 @@ int main (void)
    {
       if(ucButtonPress>0)
       {
-         printf("Button %ld pressed\r\n",ucButtonPress);
+         printf("Button %u pressed\r\n",ucButtonPress);
          ucButtonPress = 0;
          DioTglPin(pADI_GPIO2,PIN4);           // Flash LED
          pSerialNum = (volatile uint32_t *)0x40770; // Set pointer to location of unique Part ID number
@@ -60,7 +60,7 @@ int main (void)
          {
            ucUniqueID = (*(pSerialNum));
            *pSerialNum++;
-           printf("%lx",ucUniqueID);
+           printf("%x",ucUniqueID);
          }
          printf("\r\n");
       }

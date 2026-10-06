@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-    <fileVersion>3</fileVersion>
+    <fileVersion>4</fileVersion>
     <configuration>
         <name>Debug</name>
         <toolchain>
@@ -11,9 +11,13 @@
             <name>General</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <version>31</version>
+                <version>37</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
+                <option>
+                    <name>BrowseInfoPath</name>
+                    <state>Debug\BrowseInfo</state>
+                </option>
                 <option>
                     <name>ExePath</name>
                     <state>Debug\Exe</state>
@@ -58,7 +62,7 @@
                 </option>
                 <option>
                     <name>RTDescription</name>
-                    <state>Use the normal configuration of the C/C++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
+                    <state>A compact configuration of the C/C++14 runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
                 </option>
                 <option>
                     <name>OGProductVersion</name>
@@ -66,15 +70,7 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state>8.32.1.18618</state>
-                </option>
-                <option>
-                    <name>GeneralEnableMisra</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>GeneralMisraVerbose</name>
-                    <state>0</state>
+                    <state>9.70.1.13552</state>
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
@@ -97,26 +93,12 @@
                     <state>0</state>
                 </option>
                 <option>
-                    <name>GeneralMisraRules98</name>
-                    <version>0</version>
-                    <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
-                </option>
-                <option>
-                    <name>GeneralMisraVer</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>GeneralMisraRules04</name>
-                    <version>0</version>
-                    <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
-                </option>
-                <option>
                     <name>RTConfigPath2</name>
                     <state>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</state>
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>26</version>
+                    <version>35</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -133,7 +115,7 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>26</version>
+                    <version>35</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -156,7 +138,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>26</version>
+                    <version>35</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -209,18 +191,49 @@
                     <version>0</version>
                     <state>0</state>
                 </option>
+                <option>
+                    <name>OGAarch64Abi</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>OG_32_64Device</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>BuildFilesPath</name>
+                    <state>Debug</state>
+                </option>
+                <option>
+                    <name>PointerAuthentication</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>FPU64</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>OG_32_64DeviceCoreSlave</name>
+                    <version>35</version>
+                    <state>38</state>
+                </option>
+                <option>
+                    <name>GOutputSo</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>35</version>
+                <version>40</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
                     <name>CCDefines</name>
                     <state>CHIPSEL_M355</state>
+                    <state>$CMSIS_PACK_DEVICE_DEFINES$</state>
+                    <state>_RTE_</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -340,15 +353,10 @@
                     <state></state>
                 </option>
                 <option>
-                    <name>CompilerMisraOverride</name>
-                    <state>0</state>
-                </option>
-                <option>
                     <name>CCIncludePath2</name>
-                    <state>$PROJ_DIR$\..\..\..\..\common</state>
-                    <state>$PROJ_DIR$\..\..\..\..\inc</state>
-                    <state>$PROJ_DIR$\..\..\..\..\common\ad5940lib</state>
                     <state>$PROJ_DIR$\..\..\..\..\common\IAR</state>
+                    <state>$CMSIS_PACK_DEVICE_INCLUDES$</state>
+                    <state>$CMSIS_PACK_INCLUDES$</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -374,16 +382,6 @@
                 <option>
                     <name>CCOptLevelSlave</name>
                     <state>1</state>
-                </option>
-                <option>
-                    <name>CompilerMisraRules98</name>
-                    <version>0</version>
-                    <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
-                </option>
-                <option>
-                    <name>CompilerMisraRules04</name>
-                    <version>0</version>
-                    <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
                 </option>
                 <option>
                     <name>CCPosIndRopi</name>
@@ -470,13 +468,41 @@
                     <name>OICompilerExtraOption</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>CCStackProtection</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPointerAutentiction</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCBranchTargetIdentification</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPosRadRwpi</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPosSharedSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCUseIarExtensions</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>CCUseGnuExtensions</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>AARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>10</version>
+                <version>12</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -526,7 +552,8 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>$CMSIS_PACK_DEVICE_DEFINES$</state>
+                    <state>_RTE_</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -618,7 +645,8 @@
                 </option>
                 <option>
                     <name>AUserIncludes</name>
-                    <state></state>
+                    <state>$CMSIS_PACK_DEVICE_INCLUDES$</state>
+                    <state>$CMSIS_PACK_INCLUDES$</state>
                 </option>
                 <option>
                     <name>AExtraOptionsCheckV2</name>
@@ -631,6 +659,14 @@
                 <option>
                     <name>AsmNoLiteralPool</name>
                     <state>0</state>
+                </option>
+                <option>
+                    <name>PreInclude</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>A_32_64Device</name>
+                    <state>1</state>
                 </option>
             </data>
         </settings>
@@ -666,31 +702,18 @@
         </settings>
         <settings>
             <name>CUSTOM</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>0</hasPrio>
-            </data>
-        </settings>
-        <settings>
-            <name>BICOMP</name>
-            <archiveVersion>0</archiveVersion>
-            <data />
-        </settings>
-        <settings>
-            <name>BUILDACTION</name>
-            <archiveVersion>1</archiveVersion>
-            <data>
-                <prebuild></prebuild>
-                <postbuild></postbuild>
+                <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
         <settings>
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>22</version>
+                <version>28</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -698,16 +721,12 @@
                     <state>1</state>
                 </option>
                 <option>
-                    <name>XLinkMisraHandler</name>
-                    <state>0</state>
-                </option>
-                <option>
                     <name>IlinkInputFileSlave</name>
                     <state>0</state>
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>M355_AirQual.out</state>
+                    <state>M355_Impedance.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -767,11 +786,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$\config\linker\AnalogDevices\ADuCM355.icf</state>
+                    <state>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$/ARM/config/linker/AnalogDevices/ADuCM355.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -1010,13 +1029,69 @@
                     <name>OILinkExtraOption</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>IlinkRawBinaryFile2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySymbol2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySegment2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinaryAlign2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkLogCrtRoutineSelection</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogFragmentInfo</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogInlining</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogMerging</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkDemangle</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkWrapperFileEnable</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkWrapperFile</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkProcessor</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkFpuProcessor</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkSharedSlave</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>IARCHIVE</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>0</version>
+                <version>1</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>1</debug>
                 <option>
@@ -1031,11 +1106,19 @@
                     <name>IarchiveOutput</name>
                     <state>###Unitialized###</state>
                 </option>
+                <option>
+                    <name>IarchiveExtraOptionsCheck</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IarchiveExtraOptions</name>
+                    <state></state>
+                </option>
             </data>
         </settings>
         <settings>
-            <name>BILINK</name>
-            <archiveVersion>0</archiveVersion>
+            <name>BUILDACTION</name>
+            <archiveVersion>2</archiveVersion>
             <data />
         </settings>
     </configuration>
@@ -1049,9 +1132,13 @@
             <name>General</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <version>31</version>
+                <version>37</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
+                <option>
+                    <name>BrowseInfoPath</name>
+                    <state>Release\BrowseInfo</state>
+                </option>
                 <option>
                     <name>ExePath</name>
                     <state>Release\Exe</state>
@@ -1070,11 +1157,11 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state></state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state></state>
+                    <state>Automatic choice of formatter, without multibyte support.</state>
                 </option>
                 <option>
                     <name>GOutputBinary</name>
@@ -1082,7 +1169,7 @@
                 </option>
                 <option>
                     <name>OGCoreOrChip</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GRuntimeLibSelect</name>
@@ -1096,7 +1183,7 @@
                 </option>
                 <option>
                     <name>RTDescription</name>
-                    <state></state>
+                    <state>A compact configuration of the C/C++14 runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
                 </option>
                 <option>
                     <name>OGProductVersion</name>
@@ -1104,19 +1191,11 @@
                 </option>
                 <option>
                     <name>OGLastSavedByProductVersion</name>
-                    <state></state>
-                </option>
-                <option>
-                    <name>GeneralEnableMisra</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>GeneralMisraVerbose</name>
-                    <state>0</state>
+                    <state>9.70.1.13552</state>
                 </option>
                 <option>
                     <name>OGChipSelectEditMenu</name>
-                    <state></state>
+                    <state>ADuCM355	AnalogDevices ADuCM355</state>
                 </option>
                 <option>
                     <name>GenLowLevelInterface</name>
@@ -1135,31 +1214,17 @@
                     <state>0</state>
                 </option>
                 <option>
-                    <name>GeneralMisraRules98</name>
-                    <version>0</version>
-                    <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
-                </option>
-                <option>
-                    <name>GeneralMisraVer</name>
-                    <state>0</state>
-                </option>
-                <option>
-                    <name>GeneralMisraRules04</name>
-                    <version>0</version>
-                    <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
-                </option>
-                <option>
                     <name>RTConfigPath2</name>
-                    <state></state>
+                    <state>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</state>
                 </option>
                 <option>
                     <name>GBECoreSlave</name>
-                    <version>26</version>
+                    <version>35</version>
                     <state>38</state>
                 </option>
                 <option>
                     <name>OGUseCmsis</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>OGUseCmsisDspLib</name>
@@ -1171,12 +1236,12 @@
                 </option>
                 <option>
                     <name>CoreVariant</name>
-                    <version>26</version>
+                    <version>35</version>
                     <state>38</state>
                 </option>
                 <option>
                     <name>GFPUDeviceSlave</name>
-                    <state>-</state>
+                    <state>ADuCM355	AnalogDevices ADuCM355</state>
                 </option>
                 <option>
                     <name>FPU2</name>
@@ -1194,7 +1259,7 @@
                 </option>
                 <option>
                     <name>GFPUCoreSlave2</name>
-                    <version>26</version>
+                    <version>35</version>
                     <state>38</state>
                 </option>
                 <option>
@@ -1247,18 +1312,49 @@
                     <version>0</version>
                     <state>0</state>
                 </option>
+                <option>
+                    <name>OGAarch64Abi</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>OG_32_64Device</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>BuildFilesPath</name>
+                    <state>Release</state>
+                </option>
+                <option>
+                    <name>PointerAuthentication</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>FPU64</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>OG_32_64DeviceCoreSlave</name>
+                    <version>35</version>
+                    <state>38</state>
+                </option>
+                <option>
+                    <name>GOutputSo</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>ICCARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>35</version>
+                <version>40</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
                     <name>CCDefines</name>
-                    <state>NDEBUG</state>
+                    <state>CHIPSEL_M355</state>
+                    <state>$CMSIS_PACK_DEVICE_DEFINES$</state>
+                    <state>_RTE_</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -1367,7 +1463,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state></state>
+                    <state>$FILE_BNAME$.o</state>
                 </option>
                 <option>
                     <name>CCLibConfigHeader</name>
@@ -1378,12 +1474,10 @@
                     <state></state>
                 </option>
                 <option>
-                    <name>CompilerMisraOverride</name>
-                    <state>0</state>
-                </option>
-                <option>
                     <name>CCIncludePath2</name>
-                    <state></state>
+                    <state>$PROJ_DIR$\..\..\..\..\common\IAR</state>
+                    <state>$CMSIS_PACK_DEVICE_INCLUDES$</state>
+                    <state>$CMSIS_PACK_INCLUDES$</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -1408,17 +1502,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>1</state>
-                </option>
-                <option>
-                    <name>CompilerMisraRules98</name>
-                    <version>0</version>
-                    <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
-                </option>
-                <option>
-                    <name>CompilerMisraRules04</name>
-                    <version>0</version>
-                    <state>111101110010111111111000110111111111111111111111111110010111101111010101111111111111111111111111101111111011111001111011111011111111111111111</state>
+                    <state>3</state>
                 </option>
                 <option>
                     <name>CCPosIndRopi</name>
@@ -1505,13 +1589,41 @@
                     <name>OICompilerExtraOption</name>
                     <state>1</state>
                 </option>
+                <option>
+                    <name>CCStackProtection</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPointerAutentiction</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCBranchTargetIdentification</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPosRadRwpi</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCPosSharedSlave</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>CCUseIarExtensions</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>CCUseGnuExtensions</name>
+                    <state>0</state>
+                </option>
             </data>
         </settings>
         <settings>
             <name>AARM</name>
             <archiveVersion>2</archiveVersion>
             <data>
-                <version>10</version>
+                <version>12</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1561,7 +1673,8 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state></state>
+                    <state>$CMSIS_PACK_DEVICE_DEFINES$</state>
+                    <state>_RTE_</state>
                 </option>
                 <option>
                     <name>AList</name>
@@ -1653,7 +1766,8 @@
                 </option>
                 <option>
                     <name>AUserIncludes</name>
-                    <state></state>
+                    <state>$CMSIS_PACK_DEVICE_INCLUDES$</state>
+                    <state>$CMSIS_PACK_INCLUDES$</state>
                 </option>
                 <option>
                     <name>AExtraOptionsCheckV2</name>
@@ -1666,6 +1780,14 @@
                 <option>
                     <name>AsmNoLiteralPool</name>
                     <state>0</state>
+                </option>
+                <option>
+                    <name>PreInclude</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>A_32_64Device</name>
+                    <state>1</state>
                 </option>
             </data>
         </settings>
@@ -1701,31 +1823,18 @@
         </settings>
         <settings>
             <name>CUSTOM</name>
-            <archiveVersion>3</archiveVersion>
+            <archiveVersion>4</archiveVersion>
             <data>
                 <extensions></extensions>
                 <cmdline></cmdline>
-                <hasPrio>0</hasPrio>
-            </data>
-        </settings>
-        <settings>
-            <name>BICOMP</name>
-            <archiveVersion>0</archiveVersion>
-            <data />
-        </settings>
-        <settings>
-            <name>BUILDACTION</name>
-            <archiveVersion>1</archiveVersion>
-            <data>
-                <prebuild></prebuild>
-                <postbuild></postbuild>
+                <buildSequence>inputOutputBased</buildSequence>
             </data>
         </settings>
         <settings>
             <name>ILINK</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>22</version>
+                <version>28</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -1733,16 +1842,12 @@
                     <state>1</state>
                 </option>
                 <option>
-                    <name>XLinkMisraHandler</name>
-                    <state>0</state>
-                </option>
-                <option>
                     <name>IlinkInputFileSlave</name>
                     <state>0</state>
                 </option>
                 <option>
                     <name>IlinkOutputFile</name>
-                    <state>###Unitialized###</state>
+                    <state>M355_Impedance.out</state>
                 </option>
                 <option>
                     <name>IlinkDebugInfoEnable</name>
@@ -1802,11 +1907,11 @@
                 </option>
                 <option>
                     <name>IlinkIcfOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>lnk0t.icf</state>
+                    <state>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$/ARM/config/linker/AnalogDevices/ADuCM355.icf</state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -1866,7 +1971,7 @@
                 </option>
                 <option>
                     <name>IlinkProgramEntryLabel</name>
-                    <state></state>
+                    <state>__iar_program_start</state>
                 </option>
                 <option>
                     <name>DoFill</name>
@@ -2039,11 +2144,67 @@
                 </option>
                 <option>
                     <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>###Unitialized###</state>
+                    <state>M355_Impedance_import_lib.o</state>
                 </option>
                 <option>
                     <name>OILinkExtraOption</name>
                     <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkRawBinaryFile2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySymbol2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinarySegment2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkRawBinaryAlign2</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkLogCrtRoutineSelection</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogFragmentInfo</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogInlining</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkLogMerging</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkDemangle</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkWrapperFileEnable</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IlinkWrapperFile</name>
+                    <state></state>
+                </option>
+                <option>
+                    <name>IlinkProcessor</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkFpuProcessor</name>
+                    <state>1</state>
+                </option>
+                <option>
+                    <name>IlinkSharedSlave</name>
+                    <state>0</state>
                 </option>
             </data>
         </settings>
@@ -2051,7 +2212,7 @@
             <name>IARCHIVE</name>
             <archiveVersion>0</archiveVersion>
             <data>
-                <version>0</version>
+                <version>1</version>
                 <wantNonLocal>1</wantNonLocal>
                 <debug>0</debug>
                 <option>
@@ -2066,11 +2227,19 @@
                     <name>IarchiveOutput</name>
                     <state>###Unitialized###</state>
                 </option>
+                <option>
+                    <name>IarchiveExtraOptionsCheck</name>
+                    <state>0</state>
+                </option>
+                <option>
+                    <name>IarchiveExtraOptions</name>
+                    <state></state>
+                </option>
             </data>
         </settings>
         <settings>
-            <name>BILINK</name>
-            <archiveVersion>0</archiveVersion>
+            <name>BUILDACTION</name>
+            <archiveVersion>2</archiveVersion>
             <data />
         </settings>
     </configuration>
@@ -2085,41 +2254,208 @@
         <file>
             <name>$PROJ_DIR$\..\main.c</name>
         </file>
-    </group>
-    <group>
-        <name>common</name>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\ad5940lib\ad5940.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\ADuCM355Port.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\ClkLib.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\DioLib.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\IntLib.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\RstLib.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\UrtLib.c</name>
+            <name>$PROJ_DIR$\README_M355_Impedance.txt</name>
         </file>
     </group>
     <group>
-        <name>startup</name>
-		<file>
-            <name>$PROJ_DIR$\..\..\..\..\common\IAR\retarget.c</name>
-        </file>
+        <name>CMSIS-Pack</name>
+        <tag>CMSISPack.Component</tag>
+        <group>
+            <name>Device.AFE Operation</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$\ADuCM355/common/ad5940lib/ad5940.c</name>
+            </file>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$\ADuCM355/common/ADuCM355Port.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device Retarget UART</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$\ADuCM355/common/IAR/retarget.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device Startup</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>$PROJ_DIR$\RTE\Device\ADuCM355\adi_config.h</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\RTE\Device\ADuCM355\startup_ADuCM355.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\RTE\Device\ADuCM355\system_ADuCM355.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries CLOCK</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$\ADuCM355/common/ClkLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries GPIO</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$\ADuCM355/common/DioLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries INT</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$\ADuCM355/common/IntLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries PWR</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$\ADuCM355/common/PwrLib.c</name>
+            </file>
+        </group>
+        <group>
+            <name>Device.Peripheral Libraries UART</name>
+            <tag>CMSISPack.Component</tag>
+            <file>
+                <name>${CMSIS_PACK_PATH_AnalogDevices#ADuCM355_DFP#2.1.0}$\ADuCM355/common/UrtLib.c</name>
+            </file>
+        </group>
         <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\IAR\startup_ADuCM355.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\..\common\system_ADuCM355.c</name>
+            <name>$PROJ_DIR$\RTE\RTE_Components.h</name>
         </file>
     </group>
+    <cmsisPackSettings>
+        <rte>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+
+&lt;configuration xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"&gt;
+
+  &lt;packages/&gt;
+
+  &lt;device Dclock="26000000" Dcore="Cortex-M3" DcoreVersion="r2p1" Dendian="Little-endian" Dfamily="ADuCM355 Series" Dfpu="NO_FPU" Dmpu="NO_MPU" Dname="ADuCM355" Dtz="NO_TZ" Dvendor="Analog Devices:1" info="ARM , 64 KB RAM, 128 KB ROM" url="https://www.keil.com/dd2/analogdevices/aducm355"&gt;
+
+    &lt;package info="Analog Devices ADuCM355 Device Support and Examples" name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+  &lt;/device&gt;
+
+  &lt;toolchain Tcompiler="IAR" Toutput="exe"/&gt;
+
+  &lt;components&gt;
+
+    &lt;component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="6.2.0"&gt;
+
+      &lt;package name="CMSIS" url="https://www.keil.com/pack/" vendor="ARM" version="6.3.0"/&gt;
+
+      &lt;file category="doc" name="CMSIS/Documentation/html/Core/index.html"/&gt;
+
+      &lt;file category="include" name="CMSIS/Core/Include/"/&gt;
+
+    &lt;/component&gt;
+
+    &lt;component Cclass="Device" Cgroup="AFE" Csub="Operation" Cvendor="Analog Devices" Cversion="2.0.0" deviceDependent="1"&gt;
+
+      &lt;package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+      &lt;file category="include" deviceDependent="1" name="ADuCM355/common/ad5940lib/"/&gt;
+
+      &lt;file category="header" deviceDependent="1" name="ADuCM355/common/ad5940lib/ad5940.h" version="2.0.0"/&gt;
+
+      &lt;file category="source" deviceDependent="1" name="ADuCM355/common/ad5940lib/ad5940.c" version="2.0.0"/&gt;
+
+      &lt;file category="source" deviceDependent="1" name="ADuCM355/common/ADuCM355Port.c" version="2.0.0"/&gt;
+
+    &lt;/component&gt;
+
+    &lt;component Cclass="Device" Cgroup="Peripheral Libraries" Csub="CLOCK" Cvendor="Analog Devices" Cversion="2.0.0" deviceDependent="1"&gt;
+
+      &lt;package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+      &lt;file category="header" deviceDependent="1" name="ADuCM355/common/ClkLib.h" version="2.0.0"/&gt;
+
+      &lt;file category="source" deviceDependent="1" name="ADuCM355/common/ClkLib.c" version="2.0.0"/&gt;
+
+    &lt;/component&gt;
+
+    &lt;component Cclass="Device" Cgroup="Peripheral Libraries" Csub="GPIO" Cvendor="Analog Devices" Cversion="2.0.0" deviceDependent="1"&gt;
+
+      &lt;package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+      &lt;file category="header" deviceDependent="1" name="ADuCM355/common/DioLib.h" version="2.0.0"/&gt;
+
+      &lt;file category="source" deviceDependent="1" name="ADuCM355/common/DioLib.c" version="2.0.0"/&gt;
+
+    &lt;/component&gt;
+
+    &lt;component Cclass="Device" Cgroup="Peripheral Libraries" Csub="INT" Cvendor="Analog Devices" Cversion="2.0.0" deviceDependent="1"&gt;
+
+      &lt;package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+      &lt;file category="header" deviceDependent="1" name="ADuCM355/common/IntLib.h" version="2.0.0"/&gt;
+
+      &lt;file category="source" deviceDependent="1" name="ADuCM355/common/IntLib.c" version="2.0.0"/&gt;
+
+    &lt;/component&gt;
+
+    &lt;component Cclass="Device" Cgroup="Peripheral Libraries" Csub="PWR" Cvendor="Analog Devices" Cversion="2.0.0" deviceDependent="1"&gt;
+
+      &lt;package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+      &lt;file category="header" deviceDependent="1" name="ADuCM355/common/PwrLib.h" version="2.0.0"/&gt;
+
+      &lt;file category="source" deviceDependent="1" name="ADuCM355/common/PwrLib.c" version="2.0.0"/&gt;
+
+    &lt;/component&gt;
+
+    &lt;component Cclass="Device" Cgroup="Peripheral Libraries" Csub="UART" Cvendor="Analog Devices" Cversion="2.0.0" deviceDependent="1"&gt;
+
+      &lt;package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+      &lt;file category="header" deviceDependent="1" name="ADuCM355/common/UrtLib.h" version="2.0.0"/&gt;
+
+      &lt;file category="source" deviceDependent="1" name="ADuCM355/common/UrtLib.c" version="2.0.0"/&gt;
+
+    &lt;/component&gt;
+
+    &lt;component Cclass="Device" Cgroup="Retarget UART" Cvendor="Analog Devices" Cversion="2.0.0" deviceDependent="1"&gt;
+
+      &lt;package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+      &lt;file category="source" condition="ADuCM355_IAR" deviceDependent="1" name="ADuCM355/common/IAR/retarget.c" version="2.0.0"/&gt;
+
+    &lt;/component&gt;
+
+    &lt;component Cclass="Device" Cgroup="Startup" Cvendor="Analog Devices" Cversion="2.0.0" deviceDependent="1"&gt;
+
+      &lt;package name="ADuCM355_DFP" url="http://download.analog.com/tools/EZBoards/ADuCM355/Releases/" vendor="AnalogDevices" version="2.0.0"/&gt;
+
+      &lt;file category="include" deviceDependent="1" name="ADuCM355/inc/"/&gt;
+
+      &lt;file attr="config" category="source" condition="ADuCM355_IAR" deviceDependent="1" name="ADuCM355/common/IAR/startup_ADuCM355.c" version="2.0.0"/&gt;
+
+      &lt;file attr="config" category="source" condition="ADuCM355" deviceDependent="1" name="ADuCM355/common/system_ADuCM355.c" version="2.0.0"/&gt;
+
+      &lt;file attr="config" category="header" condition="ADuCM355" deviceDependent="1" name="ADuCM355/inc/adi_config.h" version="2.0.0"/&gt;
+
+    &lt;/component&gt;
+
+  &lt;/components&gt;
+
+  &lt;apis/&gt;
+
+&lt;/configuration&gt;
+
+</rte>
+    </cmsisPackSettings>
+    <projectSettings>
+        <general>
+            <resolveSourceForBinaries>true</resolveSourceForBinaries>
+        </general>
+    </projectSettings>
 </project>
+
+

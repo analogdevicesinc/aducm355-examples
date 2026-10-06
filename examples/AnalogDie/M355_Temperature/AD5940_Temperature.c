@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -185,17 +185,18 @@ void AD5940_TemperatureISR(void){
 }
 
 void AD5940_PrintResult(void){
-  for(int i=0; i<data_count; i++){
+	int i;
+  for(i=0; i<data_count; i++){
     int32_t data = buff[i]&0xffff;
     data -= 0x8000;	//data from SINC2 is added 0x8000, while data from register TEMPSENSDAT has no 0x8000 offset.
-    printf("Result[%d] = %ld, %.2f(C)\n", i, data, data/8.13f/1.5f-273.15f);
+    printf("Result[%d] = %d, %.2f(C)\n", i, data, data/8.13f/1.5f-273.15f);
   }
 }
 
 void AD5940_Main(void){
   AD5940PlatformCfg();
-  printf("Internal calibration register value:\nGain: 0x%08lx\n", AD5940_ReadReg(REG_AFE_ADCGAINDIOTEMPSENS));
-  printf("Offset: 0x%08lx\n", AD5940_ReadReg(REG_AFE_ADCOFFSETEMPSENS1));
+  printf("Internal calibration register value:\nGain: 0x%08x\n", AD5940_ReadReg(REG_AFE_ADCGAINDIOTEMPSENS));
+  printf("Offset: 0x%08x\n", AD5940_ReadReg(REG_AFE_ADCOFFSETEMPSENS1));
   AD5940_TemperatureInit();
   AD5940_WUPTCtrl(bTRUE); //start wupt, so the sequence will be run periodically.
   while(1){

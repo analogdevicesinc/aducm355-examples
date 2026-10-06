@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -29,7 +29,8 @@ AD5940Err EDAShowResult(void *pData, uint32_t DataCount)
   AppEDACtrl(EDACTRL_GETRTIAMAG, &RtiaMag);
 
   /*Process data*/
-  for(int i=0;i<DataCount;i++)
+	int i;
+  for(i=0;i<DataCount;i++)
   {
     float mag, phase;
     fImpCar_Type res;
@@ -158,7 +159,7 @@ uint32_t set_eda_base(uint32_t para1, uint32_t para2)
 {
   fImpCar_Type ImpAVR;
   printf("Set EDA impedance baseline with current measured impedance average result\n");
-  printf("Resistor used to measure baseline is %ldOhm\n", para1);
+  printf("Resistor used to measure baseline is %uOhm\n", para1);
   ResistorForBaseline = para1;
   AppEDACtrl(EDACTRL_GETAVR, &ImpAVR);
   AppEDACtrl(EDACTRL_SETBASE, &ImpAVR);

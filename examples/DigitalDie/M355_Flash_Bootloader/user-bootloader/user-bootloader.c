@@ -425,6 +425,7 @@ static __noreturn void RunUserCode(void)
 
     /* Jump to the application entry point */
     ((IntFunc)application_vector_table[1])();
+    while(1);
 }
 
 /**
@@ -485,7 +486,9 @@ void SetBaudRate(void)
            Divide by 8 == shift right by 3 bits
            i.e UCLK/BR
         */
-        UclkTicksInUartBit = ((pADI_UART0->COMASRL >> 4) | (pADI_UART0->COMASRH << 12)) >> 3;
+        uint32_t temp_low = pADI_UART0->COMASRL >> 4;
+        uint32_t temp_high = pADI_UART0->COMASRH << 12;
+        UclkTicksInUartBit = (temp_low | temp_high) >> 3;
 
         pADI_UART0->COMACR =  0x0; /* Disable the Auto Baud timer */
 

@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2017-2019 Analog Devices, Inc. All Rights Reserved.
+Copyright (c) 2017-2026 Analog Devices, Inc. All Rights Reserved.
 
 This software is proprietary to Analog Devices, Inc. and its licensors.
 By using this software you agree to the terms of the associated
@@ -126,7 +126,7 @@ void UartInit(void)
    DioCfgPin(pADI_GPIO0,PIN10|PIN11,1);               // Setup P0.10, P0.11 as UART pin
    pADI_UART0->COMLCR2 = 0x3;                  // Set PCLk oversampling rate 32. (PCLK to UART baudrate generator is /32)
    UrtCfg(pADI_UART0,B230400,
-          (BITM_UART_COMLCR_WLS|3),0);         // Configure UART for 57600 baud rate
+          (BITM_UART_COMLCR_WLS|3),0);         // Configure UART for 230400 baud rate
    UrtFifoCfg(pADI_UART0, RX_FIFO_1BYTE,      // Rx Trigger interrupt after 1 byte received
               BITM_UART_COMFCR_FIFOEN);
    // Clear the Rx/TX FIFOs
@@ -150,7 +150,8 @@ void UART_Int_Handler(void)
    if ((ucCOMIID0 & 0xE) == 0x4)	          // Receive byte
    {
       iNumBytesInFifo = pADI_UART0->COMRFC;    // read the Num of bytes in FIFO
-      for (uint8_t i=0; i<iNumBytesInFifo;i++)
+		  uint8_t i;
+      for (i=0; i<iNumBytesInFifo;i++)
       {
          feedWDT = UrtRx(pADI_UART0);
       }
@@ -158,10 +159,11 @@ void UART_Int_Handler(void)
    if ((ucCOMIID0 & 0xE) == 0xC)	          // UART Time-out condition
    {
       iNumBytesInFifo = pADI_UART0->COMRFC;    // read the Num of bytes in FIFO
-      for (uint8_t i=0; i<iNumBytesInFifo;i++)
-      {
+      uint8_t i;
+		  for (i=0; i<iNumBytesInFifo;i++)
+       {
          feedWDT = UrtRx(pADI_UART0);
-      }
+       }
    }
 }
 // Interrupt handler for P1.0 - S2 button
@@ -176,5 +178,6 @@ void GPIO_A_Int_Handler(void)
       feedWDT = '1';
    }  
 }
+
 
 
